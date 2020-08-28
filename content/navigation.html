@@ -1,0 +1,23 @@
+<div class="navigation">
+
+    <?php
+    $cat_sql="SELECT * FROM l3_prac_chic_category"; // sets up query
+    $cat_query=msqli_query($dbconnect,$cat_sql); // runs query
+    $cat_rs=mysqli_fetch_assoc($cat_query); // organises results
+
+// loop to create dymaic category links. Column heading from table is in square brackets (eg: 'name')
+
+do {?>
+    
+    <a class="nav" href="#"><?php echo $cat_rs['catName];?></a>|
+    
+<?php
+}
+while ($cat_rs=mysqli_fetch_assoc($cat_query))
+
+    ?>
+
+
+    <a class="nav" href="admin/admin.php">Admin</a>
+
+</div> <!-- end navigation -->
